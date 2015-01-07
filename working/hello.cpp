@@ -6,8 +6,13 @@ int main( int argc, char ** argv )
     char s[] = {'s','t','r','i','n','g',0};
     // You would get the same result if you defined it as follows:
     // `char s[] = "string";` Which is treated just like the array above.
-    for (int i = 0; s[i]; ++i) {
-        printf("char is %c\n", s[i]);
+//    for (int i = 0; s[i]; ++i) {
+//        printf("char is %c\n", s[i]);
+//    }
+    // You can also use pointers because a string is just an array of characters.
+    for (char c : s) {
+        if (c == 0) break; // breaks when it reaches the end, because the last item in teh array is 0
+        printf("char is %c\n", c);
     }
     return 0;
 }
